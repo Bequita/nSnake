@@ -11,6 +11,12 @@
 
 #include <iostream>
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <libintl.h>
+#include <locale.h>
+#define _(STRING) gettext(STRING)
+
 LayoutMainMenu::LayoutMainMenu(int width, int height, GameStateMainMenu* state):
 	Layout(width, height),
 	state(state),
@@ -27,6 +33,10 @@ LayoutMainMenu::~LayoutMainMenu()
 }
 void LayoutMainMenu::windowsInit()
 {
+	setlocale (LC_ALL, "");
+  	bindtextdomain ("nsnake", "/usr/share/locale/");
+  	textdomain ("nsnake");
+
 	Layout::windowsInit();
 
 	// LOGO
@@ -40,7 +50,7 @@ void LayoutMainMenu::windowsInit()
 	                        55, 0,
 	                        24, WINDOW_FILL);
 
-	this->menu->setTitle("Main Menu");
+	this->menu->setTitle(_("Main Menu"));
 	this->menu->refresh();
 
 	// ANIMATION

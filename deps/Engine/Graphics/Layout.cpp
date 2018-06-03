@@ -6,6 +6,12 @@
 #include <iostream>
 #include <cstdlib>
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <libintl.h>
+#include <locale.h>
+#define _(STRING) gettext(STRING)
+
 int Layout::screenWidth  = 0;
 int Layout::screenHeight = 0;
 
@@ -22,6 +28,10 @@ Layout::~Layout()
 { }
 void Layout::windowsInit()
 {
+	setlocale (LC_ALL, "");
+  	bindtextdomain ("nsnake", "/usr/share/locale/");
+  	textdomain ("nsnake");
+
 	clear();
 
 	// Gets the current width and height of the whole terminal.
@@ -32,9 +42,9 @@ void Layout::windowsInit()
 	    (current_height < intendedHeight))
 	{
 		Ncurses::exit();
-		std::cerr << "Error! Your console screen is smaller than "
+		std::cerr << _("Error! Your console screen is smaller than ")
 		          << intendedWidth << "x" << intendedHeight << "\n"
-		          << "Please resize your window and try again."
+		          << _("Please resize your window and try again.")
 		          << std::endl;
 
 		exit(EXIT_FAILURE);

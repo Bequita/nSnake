@@ -2,6 +2,12 @@
 #include <Engine/EngineGlobals.hpp>
 #include <Engine/Helpers/Utils.hpp>
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <libintl.h>
+#include <locale.h>
+#define _(STRING) gettext(STRING)
+
 LayoutGame::LayoutGame(Game* game, int width, int height):
 	Layout(width, height),
 	game(game),
@@ -20,13 +26,17 @@ LayoutGame::~LayoutGame()
 }
 void LayoutGame::windowsInit()
 {
+	setlocale (LC_ALL, "");
+  	bindtextdomain ("nsnake", "/usr/share/locale/");
+  	textdomain ("nsnake");
+
 	Layout::windowsInit();
 	this->main->setTitle("nsnake " VERSION);
 
 	if (this->game->currentScore->level.empty())
-		this->main->setTitle("Arcade Mode", Window::TOP_RIGHT);
+		this->main->setTitle(_("Arcade Mode"), Window::TOP_RIGHT);
 	else
-		this->main->setTitle("Level " + this->game->board->getMetadata("name"), Window::TOP_RIGHT);
+		this->main->setTitle(_("Level ") + this->game->board->getMetadata("name"), Window::TOP_RIGHT);
 
 	// Leftmost window
 	this->gamewin = new Window(this->main,
@@ -48,7 +58,7 @@ void LayoutGame::windowsInit()
 	                         this->main->getW() / 2,
 	                         7);
 
-	this->pause->setTitle("Paused");
+	this->pause->setTitle(_("Paused"));
 
 	// Le help window.
 	this->help = new Window(this->main,
@@ -57,7 +67,7 @@ void LayoutGame::windowsInit()
 	                        this->main->getW() / 2,
 	                        this->main->getH() / 2);
 
-	this->help->setTitle("Help");
+	this->help->setTitle(_("Help"));
 
 	this->helpWindows = new WindowGameHelp();
 }
@@ -77,6 +87,10 @@ void LayoutGame::windowsExit()
 }
 void LayoutGame::draw(Menu* menu)
 {
+	setlocale (LC_ALL, "");
+  	bindtextdomain ("nsnake", "/usr/share/locale/");
+  	textdomain ("nsnake");
+
 	if (! this->game)
 		return;
 
@@ -123,26 +137,26 @@ void LayoutGame::draw(Menu* menu)
 
 	ColorPair hilite = EngineGlobals::Theme::hilite_text;
 
-	this->info->print("Hi-Score", 0, 0, hilite);
-	this->info->print("Score",    this->info->getW()/3, 0, hilite);
-	this->info->print("Speed",    this->info->getW()/3 * 2, 0, hilite);
+	this->info->print(_("Hi-Score"), 0, 0, hilite);
+	this->info->print(_("Score"),    this->info->getW()/3, 0, hilite);
+	this->info->print(_("Speed"),    this->info->getW()/3 * 2, 0, hilite);
 
 	if (this->game->scores->highScore)
 	{
 		std::string points = Utils::String::toString(this->game->scores->highScore->points);
 
-		this->info->print(points, 9, 0, EngineGlobals::Theme::text);
+		this->info->print(points, 14, 0, EngineGlobals::Theme::text);
 	}
 
 	std::string points = Utils::String::toString(this->game->currentScore->points);
 	this->info->print(points,
-	                  this->info->getW()/3 + 6,
+	                  this->info->getW()/3 + 8,
 	                  0,
 	                  EngineGlobals::Theme::text);
 
 	std::string speed = Utils::String::toString(this->game->currentScore->speed);
 	this->info->print(speed,
-	                  this->info->getW()/3 * 2 + 6,
+	                  this->info->getW()/3 * 2 + 10,
 	                  0,
 	                  EngineGlobals::Theme::text);
 

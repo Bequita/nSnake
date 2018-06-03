@@ -8,6 +8,12 @@
 #include <vector>
 #include <string>
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <libintl.h>
+#include <locale.h>
+#define _(STRING) gettext(STRING)
+
 // HACK This will be initialized at `Globals::init()`
 std::string BoardParser::directory = "";
 
@@ -28,10 +34,14 @@ Board* BoardParser::load(std::string name)
 
 Board* BoardParser::loadFile(std::string filename)
 {
+	setlocale (LC_ALL, "");
+  	bindtextdomain ("nsnake", "/usr/share/locale/");
+  	textdomain ("nsnake");
+
     std::ifstream file(filename.c_str());
 
     if (!(file.is_open()))
-	    throw BoardParserException("Can't open file '" + filename + "'");
+	    throw BoardParserException(_("Can't open file '") + filename + "'");
 
     // Tells what's the current line on the file
     // (independent of comments and empty lines)
@@ -58,7 +68,7 @@ Board* BoardParser::loadFile(std::string filename)
 
 	    // We only care for the line that tells a level
 	    // definition will start.
-	    if (current_line != "start")
+	    if (current_line != _("start"))
 		    metadata_buffer += (current_line + '\n');
 
 	    else
@@ -72,7 +82,7 @@ Board* BoardParser::loadFile(std::string filename)
 
 		        current_line = Utils::String::trim(current_line);
 
-		        if (current_line == "end")
+		        if (current_line == _("end"))
 		        {
 			        parsed_level = true;
 			        break;
@@ -86,7 +96,7 @@ Board* BoardParser::loadFile(std::string filename)
 		        // End-of-file...
 		        // Something wrong happened
 		        throw BoardParserException(
-			        "Abrupt ending of file while parsing level at line " +
+			        _("Abrupt ending of file while parsing level at line ") +
 			        Utils::String::toString(line_count)
 			        );
 	        }

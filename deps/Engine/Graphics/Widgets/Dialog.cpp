@@ -9,6 +9,12 @@
 #include <vector>
 #include <algorithm>
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <libintl.h>
+#include <locale.h>
+#define _(STRING) gettext(STRING)
+
 void Dialog::show(std::string message, bool pressAnyKey)
 {
 	std::vector<std::string> message_lines = Utils::String::split(message, '\n');
@@ -50,6 +56,10 @@ void Dialog::show(std::string message, bool pressAnyKey)
 
 bool Dialog::askBool(std::string question, std::string title, bool default_value)
 {
+	setlocale (LC_ALL, "");
+  	bindtextdomain ("nsnake", "/usr/share/locale/");
+  	textdomain ("nsnake");
+
 	int windowx = Layout::screenWidth/2 - (question.size() + 12)/2;
 	int windowy = Layout::screenHeight/2 - 5/2;
 
@@ -66,15 +76,15 @@ bool Dialog::askBool(std::string question, std::string title, bool default_value
 	Menu menu(1, 2, question.size() + 10, 2);
 
 	std::vector<std::string> options;
-	options.push_back("Yes");
-	options.push_back("No");
+	options.push_back(_("Yes"));
+	options.push_back(_("No"));
 
 	MenuItemTextlist* list = new MenuItemTextlist(question,
 	                                              0,
 	                                              options,
 	                                              (default_value ?
-	                                               "Yes" :
-	                                               "No"));
+	                                               _("Yes") :
+	                                               _("No")));
 	menu.add(list);
 
 	while (true)
@@ -99,7 +109,7 @@ bool Dialog::askBool(std::string question, std::string title, bool default_value
 		    InputManager::isPressed(KEY_ENTER))
 		{
 			std::string str(menu.getString(0));
-			return (str == "Yes");
+			return (str == _("Yes"));
 		}
 	}
 

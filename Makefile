@@ -141,6 +141,11 @@ install: all
 	$(MUTE)install -pdm755 $(DESTDIR)$(DESKTOPDIR)
 	$(MUTE)install -pm644 misc/nsnake.desktop $(DESTDIR)$(DESKTOPDIR)
 
+	# Copying translation files...
+	# Spanish (Argentina) translation
+	$(MUTE)-cp -v translate/po/es_AR/nsnake.mo /usr/share/locale/es_AR/LC_MESSAGES/
+	# French (Canada) translation
+	$(MUTE)-cp -v translate/po/fr_CA/nsnake.mo /usr/share/locale/fr_CA/LC_MESSAGES/
 	# $(PACKAGE) successfuly installed!
 
 uninstall:
@@ -151,6 +156,9 @@ uninstall:
 	$(MUTE)rm -f $(DESTDIR)$(PNGDIR)/32x32/apps/nsnake.png
 	$(MUTE)rm -f $(DESTDIR)$(XPMDIR)/nsnake.xpm
 	$(MUTE)rm -f $(DESTDIR)$(DESKTOPDIR)/nsnake.desktop
+
+	$(MUTE)-rm -f /usr/share/locale/es_AR/LC_MESSAGES/nsnake.mo
+	$(MUTE)-rm -f /usr/share/locale/fr_CA/LC_MESSAGES/nsnake.mo
 
 $(EXE): $(OBJECTS) $(ENGINE_OBJECTS) $(COMMANDER_OBJECTS)
 	# Linking...

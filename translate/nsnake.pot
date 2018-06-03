@@ -1,0 +1,390 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-03 14:45-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: deps/Engine/Graphics/Widgets/Menu/MenuItem/MenuItemTextlist.cpp:34
+msgid "Invalid initial value for MenuItemTextlist"
+msgstr ""
+
+#: deps/Engine/Graphics/Widgets/Dialog.cpp:80
+#: deps/Engine/Graphics/Widgets/Dialog.cpp:87
+msgid "No"
+msgstr ""
+
+#: deps/Engine/Graphics/Widgets/Dialog.cpp:79
+#: deps/Engine/Graphics/Widgets/Dialog.cpp:86
+#: deps/Engine/Graphics/Widgets/Dialog.cpp:112
+msgid "Yes"
+msgstr ""
+
+#: deps/Engine/Graphics/Window.cpp:32 deps/Engine/Graphics/Window.cpp:75
+msgid "Could not create Ncurses Window"
+msgstr ""
+
+#: deps/Engine/Graphics/Layout.cpp:45
+msgid "Error! Your console screen is smaller than "
+msgstr ""
+
+#: deps/Engine/Graphics/Layout.cpp:47
+msgid "Please resize your window and try again."
+msgstr ""
+
+#: deps/Engine/Flow/StateManager.cpp:50
+msgid "No initial state given to StateManager"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:437
+msgid "Starting Speed"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:445
+msgid "Teleport"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:448
+msgid "Random Walls"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:599
+msgid "Reset to Defaults"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:478
+msgid "Scroll Delay(ms)"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:484
+msgid "Scroll Down"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:487
+msgid "Scroll Left"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:490
+msgid "Scroll Right"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:481
+msgid "Scroll Up"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:521
+msgid "Show Borders"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:453 src/States/GameStateMainMenu.cpp:464
+msgid "Small"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:469
+msgid "Maze size"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:454 src/States/GameStateMainMenu.cpp:465
+msgid "Medium"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:531
+msgid "Outer Border"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:574
+msgid "Key down"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:590
+msgid "Key help"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:578
+msgid "Key left"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:586
+msgid "Key pause"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:594
+msgid "Key quit"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:582
+msgid "Key right"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:570
+msgid "Key up"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:455 src/States/GameStateMainMenu.cpp:466
+msgid "Large"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:495
+msgid "Erase High Scores"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:526
+msgid "Fancy Borders"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:440
+msgid "Fruits"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:398
+#: src/States/GameStateMainMenu.cpp:401 src/States/GameStateMainMenu.cpp:430
+#: src/States/GameStateMainMenu.cpp:514 src/States/GameStateMainMenu.cpp:561
+msgid "Back"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:536
+msgid "Center Horizontal"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:541
+msgid "Center Vertical"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:165
+msgid "All high scores erased!"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:360 src/Display/Layouts/LayoutGame.cpp:37
+msgid "Arcade Mode"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:160
+msgid "Are you sure?"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:307 src/States/GameStateMainMenu.cpp:372
+msgid "Controls"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:302 src/States/GameStateMainMenu.cpp:369
+msgid "GUI Options"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:297 src/States/GameStateMainMenu.cpp:366
+msgid "Game Settings"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:375 src/Display/Layouts/LayoutGame.cpp:70
+msgid "Help"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:291 src/States/GameStateMainMenu.cpp:363
+msgid "Level Select"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:125 src/States/GameStateMainMenu.cpp:171
+#: src/States/GameStateMainMenu.cpp:187 src/States/GameStateMainMenu.cpp:210
+#: src/Display/Layouts/LayoutMainMenu.cpp:53
+msgid "Main Menu"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:243
+msgid "Press any key, Enter to Cancel"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:378
+msgid "Quit"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:401
+msgid "Random"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:288
+msgid ""
+"\n"
+"You can also download more levels from the website:\n"
+"http://nsnake.alexdantas.net/"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:282
+msgid ""
+"Sorry, it seems you have no levels.\n"
+"\n"
+"Please copy the default level files from\n"
+"`"
+msgstr ""
+
+#: src/States/GameStateMainMenu.cpp:285
+msgid ""
+"/`\n"
+"to\n"
+"`"
+msgstr ""
+
+#: src/States/GameStateGame.cpp:37
+msgid "Couldn't load the level! (Error: \""
+msgstr ""
+
+#: src/States/GameStateGame.cpp:79
+msgid "Game Over"
+msgstr ""
+
+#: src/States/GameStateGame.cpp:79
+msgid "Retry?"
+msgstr ""
+
+#: src/Entities/ScoreFile.cpp:126
+msgid "' doesn't exist"
+msgstr ""
+
+#: src/Entities/ScoreFile.cpp:152
+msgid "' has an old version format"
+msgstr ""
+
+#: src/Entities/ScoreFile.cpp:238
+msgid "Could not create file '"
+msgstr ""
+
+#: src/Entities/ScoreFile.cpp:126 src/Entities/ScoreFile.cpp:152
+msgid "File '"
+msgstr ""
+
+#: src/Entities/Game.cpp:148
+msgid "Quit Game"
+msgstr ""
+
+#: src/Entities/Game.cpp:145
+msgid "Quit to Main Menu"
+msgstr ""
+
+#: src/Entities/Game.cpp:140
+msgid "Restart"
+msgstr ""
+
+#: src/Entities/Game.cpp:137
+msgid "Resume"
+msgstr ""
+
+#: src/Entities/BoardParser.cpp:99
+msgid "Abrupt ending of file while parsing level at line "
+msgstr ""
+
+#: src/Entities/BoardParser.cpp:44
+msgid "Can't open file '"
+msgstr ""
+
+#: src/Entities/BoardParser.cpp:85
+msgid "end"
+msgstr ""
+
+#. We only care for the line that tells a level
+#. definition will start.
+#: src/Entities/BoardParser.cpp:71
+msgid "start"
+msgstr ""
+
+#: src/Display/WindowGameHelp.cpp:61
+msgid " Credits "
+msgstr ""
+
+#: src/Display/WindowGameHelp.cpp:52
+#, fuzzy
+msgid " Help "
+msgstr ""
+
+#: src/Display/WindowGameHelp.cpp:116
+msgid ""
+" Settings and scores are stored at:\n"
+" `~/.local/share/nsnake/`"
+msgstr ""
+
+#: src/Display/WindowGameHelp.cpp:60
+msgid "(Credits)"
+msgstr ""
+
+#: src/Display/WindowGameHelp.cpp:51
+#, fuzzy
+msgid "(Help)"
+msgstr ""
+
+#: src/Display/WindowGameHelp.cpp:106
+msgid ""
+"First item\n"
+"Last item"
+msgstr ""
+
+#: src/Display/WindowGameHelp.cpp:78
+msgid "In-game controls:\n"
+msgstr ""
+
+#: src/Display/WindowGameHelp.cpp:102
+msgid "Menu controls:\n"
+msgstr ""
+
+#: src/Display/WindowGameHelp.cpp:82
+msgid ""
+"Move up\n"
+"Move down\n"
+"Move left\n"
+"Move right\n"
+"Pause game\n"
+"Quit anytime\n"
+"Show help"
+msgstr ""
+
+#: src/Display/WindowGameHelp.cpp:134
+msgid ""
+"Try `nsnake --help` and `man nsnake`\n"
+"\n"
+"Game made by Alexandre Dantas,\n"
+"contact him at <eu@alexdantas.net>\n"
+"Thanks for playing this game :)\n"
+"\n"
+"Homepage:\n"
+" http://nsnake.alexdantas.net/\n"
+"Source Code:\n"
+" https://github.com/alexdantas/nsnake/"
+msgstr ""
+
+#: src/Display/WindowGameHelp.cpp:137
+msgid "contact him at <eu@alexdantas.net>\n"
+msgstr ""
+
+#: src/Display/WindowGameHelp.cpp:111
+msgid ""
+"page up\n"
+"page down"
+msgstr ""
+
+#: src/Display/Layouts/LayoutGame.cpp:140
+msgid "Hi-Score"
+msgstr ""
+
+#: src/Display/Layouts/LayoutGame.cpp:39
+msgid "Level "
+msgstr ""
+
+#: src/Display/Layouts/LayoutGame.cpp:61
+msgid "Paused"
+msgstr ""
+
+#: src/Display/Layouts/LayoutGame.cpp:141
+msgid "Score"
+msgstr ""
+
+#: src/Display/Layouts/LayoutGame.cpp:142
+msgid "Speed"
+msgstr ""

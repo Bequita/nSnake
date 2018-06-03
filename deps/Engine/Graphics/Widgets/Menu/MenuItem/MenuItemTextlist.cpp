@@ -5,11 +5,21 @@
 
 #include <stdexcept>
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <libintl.h>
+#include <locale.h>
+#define _(STRING) gettext(STRING)
+
 MenuItemTextlist::MenuItemTextlist(std::string label, int id, std::vector<std::string> options, std::string initial):
 	MenuItem(label, id),
 	options(options),
 	currentIndex(-1)
 {
+	setlocale (LC_ALL, "");
+  	bindtextdomain ("nsnake", "/usr/share/locale/");
+  	textdomain ("nsnake");
+
 	this->type = MenuItem::TEXTLIST;
 
 	for (unsigned int i = 0; i < options.size(); ++i)
@@ -21,7 +31,7 @@ MenuItemTextlist::MenuItemTextlist(std::string label, int id, std::vector<std::s
 		}
 	}
 	if ((this->currentIndex == -1) || (options.empty()))
-		throw std::runtime_error("Invalid initial value for MenuItemTextlist");
+		throw std::runtime_error(_("Invalid initial value for MenuItemTextlist"));
 }
 void MenuItemTextlist::draw(Window* window, int x, int y, int width, bool hilite)
 {

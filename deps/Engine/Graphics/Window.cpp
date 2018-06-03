@@ -4,6 +4,12 @@
 #include <sstream>				// stringstream
 #include <iostream>
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <libintl.h>
+#include <locale.h>
+#define _(STRING) gettext(STRING)
+
 Window::Window(int x, int y, int w, int h):
 	win(NULL),
 	x(x),
@@ -16,10 +22,14 @@ Window::Window(int x, int y, int w, int h):
 	bottomLeftTitle(""),
 	bottomRightTitle("")
 {
+	setlocale (LC_ALL, "");
+  	bindtextdomain ("nsnake", "/usr/share/locale/");
+  	textdomain ("nsnake");
+
 	this->win = newwin(height, width, y, x);
 
 	if (!this->win)
-		throw "Could not create Ncurses Window";
+		throw _("Could not create Ncurses Window");
 
 	this->setBorders();
 }
@@ -31,6 +41,10 @@ Window::Window(Window* parent, int x, int y, int width, int height):
 	bottomLeftTitle(""),
 	bottomRightTitle("")
 {
+	setlocale (LC_ALL, "");
+  	bindtextdomain ("nsnake", "/usr/share/locale/");
+  	textdomain ("nsnake");
+
 	// By sending any parameter as 0, we want it to expand
 	// until possible.
 	// Let's expand based if the parent window has borders
@@ -58,7 +72,7 @@ Window::Window(Window* parent, int x, int y, int width, int height):
 	// Creates a subwindow
 	this->win = derwin(parent->win, height, width, y, x);
 	if (!win)
-		throw "Could not create Ncurses Window";
+		throw _("Could not create Ncurses Window");
 
 	this->setBorders();
 }

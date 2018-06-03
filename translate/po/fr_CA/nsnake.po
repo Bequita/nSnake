@@ -1,0 +1,419 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-03 14:45-0300\n"
+"PO-Revision-Date: 2018-06-05 00:39+0000\n"
+"Last-Translator: Matayas <matayas@matayas-virtualbox>\n"
+"Language-Team: French\n"
+"Language: fr-CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Loco-Source-Locale: es_AR\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: deps/Engine/Graphics/Widgets/Menu/MenuItem/MenuItemTextlist.cpp:34
+msgid "Invalid initial value for MenuItemTextlist"
+msgstr "La valeur initiale n'est pas valide pour MenuItemTextlist"
+
+#: deps/Engine/Graphics/Widgets/Dialog.cpp:80 
+#: deps/Engine/Graphics/Widgets/Dialog.cpp:87
+msgid "No"
+msgstr "Non"
+
+#: deps/Engine/Graphics/Widgets/Dialog.cpp:79 
+#: deps/Engine/Graphics/Widgets/Dialog.cpp:86 
+#: deps/Engine/Graphics/Widgets/Dialog.cpp:112
+msgid "Yes"
+msgstr "Oui"
+
+#: deps/Engine/Graphics/Window.cpp:32 deps/Engine/Graphics/Window.cpp:75
+msgid "Could not create Ncurses Window"
+msgstr "Impossible de créer la fenêtre Ncurses"
+
+#: deps/Engine/Graphics/Layout.cpp:45
+msgid "Error! Your console screen is smaller than "
+msgstr "Erreur! Votre écran de la console est plus petit que"
+
+#: deps/Engine/Graphics/Layout.cpp:47
+msgid "Please resize your window and try again."
+msgstr "Veuillez redimensionner votre fenêtre et réessayer."
+
+#: deps/Engine/Flow/StateManager.cpp:50
+msgid "No initial state given to StateManager"
+msgstr "Aucun état initial donné à StateManager"
+
+#: src/States/GameStateMainMenu.cpp:437
+msgid "Starting Speed"
+msgstr "Vitesse de départ"
+
+#: src/States/GameStateMainMenu.cpp:445
+msgid "Teleport"
+msgstr "Téléportation"
+
+#: src/States/GameStateMainMenu.cpp:448
+msgid "Random Walls"
+msgstr "Murs aléatoires"
+
+#: src/States/GameStateMainMenu.cpp:599
+msgid "Reset to Defaults"
+msgstr "Réinitialiser les paramètres par défaut"
+
+#: src/States/GameStateMainMenu.cpp:478
+msgid "Scroll Delay(ms)"
+msgstr "Délai de défilement (ms)"
+
+#: src/States/GameStateMainMenu.cpp:484
+msgid "Scroll Down"
+msgstr "Défiler vers le bas"
+
+#: src/States/GameStateMainMenu.cpp:487
+msgid "Scroll Left"
+msgstr "Faites défiler vers la gauche"
+
+#: src/States/GameStateMainMenu.cpp:490
+msgid "Scroll Right"
+msgstr "Faites défiler vers la droite"
+
+#: src/States/GameStateMainMenu.cpp:481
+msgid "Scroll Up"
+msgstr "Faites défiler vers le haut"
+
+#: src/States/GameStateMainMenu.cpp:521
+msgid "Show Borders"
+msgstr "Afficher les bordures"
+
+#: src/States/GameStateMainMenu.cpp:453 src/States/GameStateMainMenu.cpp:464
+msgid "Small"
+msgstr "Petit"
+
+#: src/States/GameStateMainMenu.cpp:469
+msgid "Maze size"
+msgstr "Taille de labyrinthe"
+
+#: src/States/GameStateMainMenu.cpp:454 src/States/GameStateMainMenu.cpp:465
+msgid "Medium"
+msgstr "Moyen"
+
+#: src/States/GameStateMainMenu.cpp:531
+msgid "Outer Border"
+msgstr "Bordure extérieure"
+
+#: src/States/GameStateMainMenu.cpp:574
+msgid "Key down"
+msgstr "Touche Bas"
+
+#: src/States/GameStateMainMenu.cpp:590
+msgid "Key help"
+msgstr "Aide clé"
+
+#: src/States/GameStateMainMenu.cpp:578
+msgid "Key left"
+msgstr "Clé gauche"
+
+#: src/States/GameStateMainMenu.cpp:586
+msgid "Key pause"
+msgstr "Touche pause"
+
+#: src/States/GameStateMainMenu.cpp:594
+msgid "Key quit"
+msgstr "Clé quitter"
+
+#: src/States/GameStateMainMenu.cpp:582
+msgid "Key right"
+msgstr "Clé droite"
+
+#: src/States/GameStateMainMenu.cpp:570
+msgid "Key up"
+msgstr "Clé en haut"
+
+#: src/States/GameStateMainMenu.cpp:455 src/States/GameStateMainMenu.cpp:466
+msgid "Large"
+msgstr "Grand"
+
+#: src/States/GameStateMainMenu.cpp:495
+msgid "Erase High Scores"
+msgstr "Effacer les meilleurs scores"
+
+#: src/States/GameStateMainMenu.cpp:526
+msgid "Fancy Borders"
+msgstr "Frontières de fantaisie"
+
+#: src/States/GameStateMainMenu.cpp:440
+msgid "Fruits"
+msgstr "Fruits"
+
+#: src/States/GameStateMainMenu.cpp:398 src/States/GameStateMainMenu.cpp:401 
+#: src/States/GameStateMainMenu.cpp:430 src/States/GameStateMainMenu.cpp:514 
+#: src/States/GameStateMainMenu.cpp:561
+msgid "Back"
+msgstr "Arrière"
+
+#: src/States/GameStateMainMenu.cpp:536
+msgid "Center Horizontal"
+msgstr "Centre horizontal"
+
+#: src/States/GameStateMainMenu.cpp:541
+msgid "Center Vertical"
+msgstr "Centre Vertical"
+
+#: src/States/GameStateMainMenu.cpp:165
+msgid "All high scores erased!"
+msgstr "Tous les meilleurs scores effacés!"
+
+#: src/States/GameStateMainMenu.cpp:360 src/Display/Layouts/LayoutGame.cpp:37
+msgid "Arcade Mode"
+msgstr "Mode Arcade"
+
+#: src/States/GameStateMainMenu.cpp:160
+msgid "Are you sure?"
+msgstr "Êtes-vous sûr?"
+
+#: src/States/GameStateMainMenu.cpp:307 src/States/GameStateMainMenu.cpp:372
+msgid "Controls"
+msgstr "Controles"
+
+#: src/States/GameStateMainMenu.cpp:302 src/States/GameStateMainMenu.cpp:369
+msgid "GUI Options"
+msgstr "Options de l'interface graphique"
+
+#: src/States/GameStateMainMenu.cpp:297 src/States/GameStateMainMenu.cpp:366
+msgid "Game Settings"
+msgstr "Paramètres de jeu"
+
+#: src/States/GameStateMainMenu.cpp:375 src/Display/Layouts/LayoutGame.cpp:70
+msgid "Help"
+msgstr "Aidez-moi"
+
+#: src/States/GameStateMainMenu.cpp:291 src/States/GameStateMainMenu.cpp:363
+msgid "Level Select"
+msgstr "Sélection de niveau"
+
+#: src/States/GameStateMainMenu.cpp:125 src/States/GameStateMainMenu.cpp:171 
+#: src/States/GameStateMainMenu.cpp:187 src/States/GameStateMainMenu.cpp:210 
+#: src/Display/Layouts/LayoutMainMenu.cpp:53
+msgid "Main Menu"
+msgstr "Menu principal"
+
+#: src/States/GameStateMainMenu.cpp:243
+msgid "Press any key, Enter to Cancel"
+msgstr "Appuyez sur n'importe quelle touche, Entrée pour annuler"
+
+#: src/States/GameStateMainMenu.cpp:378
+msgid "Quit"
+msgstr "Quitter"
+
+#: src/States/GameStateMainMenu.cpp:401
+msgid "Random"
+msgstr "au hasard"
+
+#: src/States/GameStateMainMenu.cpp:288
+msgid ""
+""
+"You can also download more levels from the website:\n"
+"http://nsnake.alexdantas.net/"
+msgstr ""
+"Vous pouvez également télécharger plus de niveaux sur le site: http://nsnake."
+"alexdantas.net/"
+
+#: src/States/GameStateMainMenu.cpp:282
+msgid ""
+"Sorry, it seems you have no levels.\n"
+"\n"
+"Please copy the default level files from\n"
+"`"
+msgstr ""
+"Désolé, il semble que vous n'ayez aucun niveau.\n"
+"\n"
+"Veuillez copier les fichiers de niveau par défaut de\n"
+"`"
+
+#: src/States/GameStateMainMenu.cpp:285
+msgid ""
+"/`\n"
+"to\n"
+"`"
+msgstr ""
+"/ `\n"
+"à\n"
+"`"
+
+#: src/States/GameStateGame.cpp:37
+msgid "Couldn't load the level! (Error: \""
+msgstr "Impossible de charger le niveau! (Erreur: \""
+
+#: src/States/GameStateGame.cpp:79
+msgid "Game Over"
+msgstr "Jeu terminé"
+
+#: src/States/GameStateGame.cpp:79
+msgid "Retry?"
+msgstr "Recommencez?"
+
+#: src/Entities/ScoreFile.cpp:126
+msgid "' doesn't exist"
+msgstr "'n'existe pas"
+
+#: src/Entities/ScoreFile.cpp:152
+msgid "' has an old version format"
+msgstr "'a un ancien format de version"
+
+#: src/Entities/ScoreFile.cpp:238
+msgid "Could not create file '"
+msgstr "Impossible de créer le fichier '"
+
+#: src/Entities/ScoreFile.cpp:126 src/Entities/ScoreFile.cpp:152
+msgid "File '"
+msgstr "Fichier '"
+
+#: src/Entities/Game.cpp:148
+msgid "Quit Game"
+msgstr "Quitter le jeu"
+
+#: src/Entities/Game.cpp:145
+msgid "Quit to Main Menu"
+msgstr "Quitter au menu principal"
+
+#: src/Entities/Game.cpp:140
+msgid "Restart"
+msgstr "Redémarrer"
+
+#: src/Entities/Game.cpp:137
+msgid "Resume"
+msgstr "Reprendre"
+
+#: src/Entities/BoardParser.cpp:99
+msgid "Abrupt ending of file while parsing level at line "
+msgstr "Fin abrupte du fichier lors de l'analyse du niveau à la ligne"
+
+#: src/Entities/BoardParser.cpp:44
+msgid "Can't open file '"
+msgstr "Impossible d'ouvrir le fichier '"
+
+#: src/Entities/BoardParser.cpp:85
+msgid "end"
+msgstr "fin"
+
+#. We only care for the line that tells a level
+#. definition will start.
+#: src/Entities/BoardParser.cpp:71
+msgid "start"
+msgstr "début"
+
+#: src/Display/WindowGameHelp.cpp:61
+msgid " Credits "
+msgstr "Crédits"
+
+#: src/Display/WindowGameHelp.cpp:52
+msgid " Help "
+msgstr "Aidez-moi"
+
+#: src/Display/WindowGameHelp.cpp:116
+msgid ""
+" Settings and scores are stored at:\n"
+" `~/.local/share/nsnake/`"
+msgstr "Les paramètres et les scores sont stockés à: `~/.local/share/nsnake/`"
+
+#: src/Display/WindowGameHelp.cpp:60
+msgid "(Credits)"
+msgstr "(Crédits)"
+
+#: src/Display/WindowGameHelp.cpp:51
+msgid "(Help)"
+msgstr "(Aidez-moi)"
+
+#: src/Display/WindowGameHelp.cpp:106
+msgid ""
+"First item\n"
+"Last item"
+msgstr ""
+"Premier article\n"
+"Dernier article"
+
+#: src/Display/WindowGameHelp.cpp:78
+msgid ""
+"In-game controls:"
+msgstr "Contrôles en jeu:"
+
+#: src/Display/WindowGameHelp.cpp:102
+msgid ""
+"Menu controls:"
+msgstr "Contrôles de menu:"
+
+#: src/Display/WindowGameHelp.cpp:82
+msgid ""
+"Move up\n"
+"Move down\n"
+"Move left\n"
+"Move right\n"
+"Pause game\n"
+"Quit anytime\n"
+"Show help"
+msgstr ""
+"Déplacer vers le haut\n"
+"Descendre\n"
+"Se déplacer à gauche\n"
+"Déplacer vers la droite\n"
+"Pause jeu\n"
+"Quitter à tout moment\n"
+"Afficher l'aide"
+
+#: src/Display/WindowGameHelp.cpp:134
+msgid ""
+"Try `nsnake --help` and `man nsnake`\n"
+"\n"
+"Game made by Alexandre Dantas,\n"
+"contact him at <eu@alexdantas.net>\n"
+"Thanks for playing this game :)\n"
+"\n"
+"Homepage:\n"
+" http://nsnake.alexdantas.net/\n"
+"Source Code:\n"
+" https://github.com/alexdantas/nsnake/"
+msgstr ""
+"Essayez `nsnake --help` et` man nsnake`\n"
+"\n"
+"Jeu fait par Alexandre Dantas,\n"
+"contactez-le à <eu@alexdantas.net>\n"
+"Merci d'avoir joué à ce jeu :)\n"
+"\n"
+"Page d'accueil\n"
+"  http://nsnake.alexdantas.net/\n"
+"Code source:\n"
+"  https://github.com/alexdantas/nsnake/"
+
+#: src/Display/WindowGameHelp.cpp:137
+msgid ""
+"contact him at <eu@alexdantas.net>"
+msgstr "contactez-le à <eu@alexdantas.net>"
+
+#: src/Display/WindowGameHelp.cpp:111
+msgid ""
+"page up\n"
+"page down"
+msgstr ""
+"page en haut\n"
+"bas de page"
+
+#: src/Display/Layouts/LayoutGame.cpp:140
+msgid "Hi-Score"
+msgstr "Salut marquer"
+
+#: src/Display/Layouts/LayoutGame.cpp:39
+msgid "Level "
+msgstr "Niveau"
+
+#: src/Display/Layouts/LayoutGame.cpp:61
+msgid "Paused"
+msgstr "En pause"
+
+#: src/Display/Layouts/LayoutGame.cpp:141
+msgid "Score"
+msgstr "But"
+
+#: src/Display/Layouts/LayoutGame.cpp:142
+msgid "Speed"
+msgstr "La vitesse"
