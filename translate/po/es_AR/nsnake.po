@@ -1,5 +1,5 @@
-# Spanish translations for PACKAGE package
-# Traducciones al espaÃ±ol para el paquete PACKAGE.
+# Spanish (Argentina) translations for nSnake game
+# Traducciones al espaÃ±ol (Argentina) para el juego nSnake.
 # Copyright (C) 2018 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Brian Emmanuel Pericon <brianpericon.e92@gmail.com>, 2018.
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nSnake-translate v0.1\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: brianpericon.e92@gmail.com\n"
 "POT-Creation-Date: 2018-06-02 20:37-0300\n"
 "PO-Revision-Date: 2018-06-02 19:21-0300\n"
 "Last-Translator: Brian Emmanuel Pericon <brianpericon.e92@gmail.com>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: deps/Engine/Graphics/Widgets/Menu/MenuItem/MenuItemTextlist.cpp:34
 msgid "Invalid initial value for MenuItemTextlist"
-msgstr "Valor inicial no válido para MenuItemTextlist"
+msgstr "Valor inicial no vï¿½lido para MenuItemTextlist"
 
 #: deps/Engine/Graphics/Widgets/Dialog.cpp:80
 #: deps/Engine/Graphics/Widgets/Dialog.cpp:87
@@ -39,11 +39,11 @@ msgstr "No se pudo crear la ventana con Ncurses"
 
 #: deps/Engine/Graphics/Layout.cpp:45
 msgid "Error! Your console screen is smaller than "
-msgstr "Error! La pantalla de tu consola es mas pequeña que "
+msgstr "Error! La pantalla de tu consola es mas pequeï¿½a que "
 
 #: deps/Engine/Graphics/Layout.cpp:47
 msgid "Please resize your window and try again."
-msgstr "Cambie el tamaño de su ventana y vuelva a intentarlo."
+msgstr "Cambie el tamaï¿½o de su ventana y vuelva a intentarlo."
 
 #: deps/Engine/Flow/StateManager.cpp:50
 msgid "No initial state given to StateManager"
@@ -91,11 +91,11 @@ msgstr "Mostrar Bordes"
 
 #: src/States/GameStateMainMenu.cpp:453 src/States/GameStateMainMenu.cpp:464
 msgid "Small"
-msgstr "Pequeño"
+msgstr "Pequeï¿½o"
 
 #: src/States/GameStateMainMenu.cpp:469
 msgid "Maze size"
-msgstr "Tamaño laberinto"
+msgstr "Tamaï¿½o laberinto"
 
 #: src/States/GameStateMainMenu.cpp:454 src/States/GameStateMainMenu.cpp:465
 msgid "Medium"
@@ -173,7 +173,7 @@ msgstr "Modo Arcade"
 
 #: src/States/GameStateMainMenu.cpp:160
 msgid "Are you sure?"
-msgstr "¿Estas seguro?"
+msgstr "ï¿½Estas seguro?"
 
 #: src/States/GameStateMainMenu.cpp:307 src/States/GameStateMainMenu.cpp:372
 msgid "Controls"
@@ -220,7 +220,7 @@ msgid ""
 "http://nsnake.alexdantas.net/"
 msgstr ""
 "\n"
-"También puedes descargar más niveles desde el sitio web:\n"
+"Tambiï¿½n puedes descargar mï¿½s niveles desde el sitio web:\n"
 "http://nsnake.alexdantas.net/"
 
 #: src/States/GameStateMainMenu.cpp:282
@@ -291,7 +291,7 @@ msgstr "Reanudar"
 
 #: src/Entities/BoardParser.cpp:99
 msgid "Abrupt ending of file while parsing level at line "
-msgstr "Fin abrupto del archivo mientras se analiza el nivel en la línea "
+msgstr "Fin abrupto del archivo mientras se analiza el nivel en la lï¿½nea "
 
 #: src/Entities/BoardParser.cpp:44
 msgid "Can't open file '"

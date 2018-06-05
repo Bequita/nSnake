@@ -43,10 +43,12 @@ VERSION = 3.0.1
 DATE    = $(shell date "+%b%Y")
 
 # Install dirs
-PREFIX      = /usr
-EXEC_PREFIX = $(PREFIX)
-DATAROOTDIR = $(PREFIX)/share
-BINDIR      = $(EXEC_PREFIX)/bin
+PREFIX      	  = /usr
+EXEC_PREFIX 	  = $(PREFIX)
+DATAROOTDIR 	  = $(PREFIX)/share
+BINDIR      	  = $(EXEC_PREFIX)/bin
+LANGUAGEORIGINDIR = translate/po/$(1)
+LANGUAGEDESTDIR	  = $(PREFIX)/share/locale/$(1)/LC_MESSAGES
 
 # Misc stuff
 PNGDIR     = $(DATAROOTDIR)/icons/hicolor
@@ -143,9 +145,9 @@ install: all
 
 	# Copying translation files...
 	# Spanish (Argentina) translation
-	$(MUTE)-cp -v translate/po/es_AR/nsnake.mo /usr/share/locale/es_AR/LC_MESSAGES/
+	$(MUTE)-cp -v $(call LANGUAGEORIGINDIR,es_AR)/nsnake.mo $(call LANGUAGEDESTDIR,es_AR)
 	# French (Canada) translation
-	$(MUTE)-cp -v translate/po/fr_CA/nsnake.mo /usr/share/locale/fr_CA/LC_MESSAGES/
+	$(MUTE)-cp -v $(call LANGUAGEORIGINDIR,fr_CA)/nsnake.mo $(call LANGUAGEDESTDIR,fr_CA)
 	# $(PACKAGE) successfuly installed!
 
 uninstall:
@@ -157,8 +159,8 @@ uninstall:
 	$(MUTE)rm -f $(DESTDIR)$(XPMDIR)/nsnake.xpm
 	$(MUTE)rm -f $(DESTDIR)$(DESKTOPDIR)/nsnake.desktop
 
-	$(MUTE)-rm -f /usr/share/locale/es_AR/LC_MESSAGES/nsnake.mo
-	$(MUTE)-rm -f /usr/share/locale/fr_CA/LC_MESSAGES/nsnake.mo
+	$(MUTE)-rm -f $(call LANGUAGEDESTDIR,es_AR)/nsnake.mo
+	$(MUTE)-rm -f $(call LANGUAGEDESTDIR,fr_CA)/nsnake.mo
 
 $(EXE): $(OBJECTS) $(ENGINE_OBJECTS) $(COMMANDER_OBJECTS)
 	# Linking...

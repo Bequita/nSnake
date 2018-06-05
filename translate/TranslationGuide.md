@@ -1,10 +1,10 @@
 # Translation Guide
 
-> In this guide we will explain how to translate the game into any language, from the beggining. In order to do that, you should follow these steps.
+> In this guide we will explain how to translate the game into any language, from the beginning. In order to do that, you should follow these steps.
 
 ### Steps:
 
-1) First, in every *.cpp* file that have strings to be translated, include at the beggining of the file these libraries:
+1) First, in every *.cpp* file that have strings to be translated, include at the beginning of the file these libraries:
 
 ```sh
 #include <stdio.h>
