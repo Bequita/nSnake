@@ -3,7 +3,15 @@
 
 #include <Engine/Graphics/Colors.hpp>
 
+#include <string.h>
 #include <string>
+
+//Libraries for translations
+#include <stdio.h>
+#include <stdlib.h>
+#include <libintl.h>
+#include <locale.h>
+#define _(STRING) gettext(STRING)
 
 // Avoiding cyclic #includes
 struct ScoreEntry;
@@ -100,6 +108,7 @@ namespace Globals
 		};
 		BoardSize intToBoardSize(int val);
 		int boardSizeToInt(BoardSize size);
+		std::string translationIsTooLong(char* translationCharArray, int skippedCharacters = 10);
 
 		extern BoardSize board_size;
 

@@ -11,12 +11,6 @@
 #include <Engine/Flow/StateManager.hpp>
 #include <States/GameStateGame.hpp>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <libintl.h>
-#include <locale.h>
-#define _(STRING) gettext(STRING)
-
 enum NamesToEasilyIdentifyTheMenuItemsInsteadOfRawNumbers
 {
 	// Main Menu
@@ -106,10 +100,6 @@ void GameStateMainMenu::unload()
 
 void GameStateMainMenu::update()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	if (InputManager::isPressed("quit"))
 		StateManager::quit();
 
@@ -122,7 +112,7 @@ void GameStateMainMenu::update()
 			switch (this->menuLevels->currentID())
 			{
 			case GO_BACK:
-				this->layout->menu->setTitle(_("Main Menu"));
+				this->layout->menu->setTitle(Globals::Game::translationIsTooLong(_("Main Menu")));
 				this->menuLevelsActivated = false;
 				break;
 
@@ -168,7 +158,7 @@ void GameStateMainMenu::update()
 				break;
 
 			case GO_BACK:
-				this->layout->menu->setTitle(_("Main Menu"));
+				this->layout->menu->setTitle(Globals::Game::translationIsTooLong(_("Main Menu")));
 				this->menuGameSettingsActivated = false;
 				break;
 			}
@@ -184,7 +174,7 @@ void GameStateMainMenu::update()
 			switch(this->menuGUIOptions->currentID())
 			{
 			case GO_BACK:
-				this->layout->menu->setTitle(_("Main Menu"));
+				this->layout->menu->setTitle(Globals::Game::translationIsTooLong(_("Main Menu")));
 				this->menuGUIOptionsActivated = false;
 
 				// Redrawing the screen to refresh settings
@@ -207,7 +197,7 @@ void GameStateMainMenu::update()
 			switch(this->menuControls->currentID())
 			{
 			case GO_BACK:
-				this->layout->menu->setTitle(_("Main Menu"));
+				this->layout->menu->setTitle(Globals::Game::translationIsTooLong(_("Main Menu")));
 				this->menuControlsActivated = false;
 				break;
 
@@ -291,23 +281,23 @@ void GameStateMainMenu::update()
 				}
 				else
 				{
-					this->layout->menu->setTitle(_("Level Select"));
+					this->layout->menu->setTitle(Globals::Game::translationIsTooLong(_("Level Select")));
 					this->menuLevelsActivated = true;
 				}
 				break;
 
 			case GAME_SETTINGS:
-				this->layout->menu->setTitle(_("Game Settings"));
+				this->layout->menu->setTitle(Globals::Game::translationIsTooLong(_("Game Settings")));
 				this->menuGameSettingsActivated = true;
 				break;
 
 			case GUI_OPTIONS:
-				this->layout->menu->setTitle(_("GUI Options"));
+				this->layout->menu->setTitle(Globals::Game::translationIsTooLong(_("GUI Options")));
 				this->menuGUIOptionsActivated = true;
 				break;
 
 			case CONTROLS:
-				this->layout->menu->setTitle(_("Controls"));
+				this->layout->menu->setTitle(Globals::Game::translationIsTooLong(_("Controls")));
 				this->menuControlsActivated = true;
 				break;
 
@@ -344,10 +334,6 @@ void GameStateMainMenu::draw()
 
 void GameStateMainMenu::createMainMenu()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	SAFE_DELETE(this->menu);
 
 	// Creating the Menu and Items.
@@ -360,33 +346,29 @@ void GameStateMainMenu::createMainMenu()
 
 	MenuItem* item;
 
-	item = new MenuItem(_("Arcade Mode"), ARCADE);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Arcade Mode"), 20), ARCADE);
 	menu->add(item);
 
-	item = new MenuItem(_("Level Select"), LEVELS);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Level Select"), 20), LEVELS);
 	menu->add(item);
 
-	item = new MenuItem(_("Game Settings"), GAME_SETTINGS);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Game Settings"), 20), GAME_SETTINGS);
 	menu->add(item);
 
-	item = new MenuItem(_("GUI Options"), GUI_OPTIONS);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("GUI Options"), 25), GUI_OPTIONS);
 	menu->add(item);
 
-	item = new MenuItem(_("Controls"), CONTROLS);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Controls"), 20), CONTROLS);
 	menu->add(item);
 
-	item = new MenuItem(_("Help"), HELP);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Help"), 20), HELP);
 	menu->add(item);
 
-	item = new MenuItem(_("Quit"), QUIT_GAME);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Quit"), 20), QUIT_GAME);
 	menu->add(item);
 }
 void GameStateMainMenu::createLevelsMenu()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	SAFE_DELETE(this->menuLevels);
 
 	this->menuLevels = new MenuAlphabetic(1,
@@ -398,10 +380,10 @@ void GameStateMainMenu::createLevelsMenu()
 
 	std::vector<std::string> levels = BoardParser::listLevels();
 
-	item = new MenuItem(_("Back"), GO_BACK);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Back")), GO_BACK);
 	menuLevels->add(item);
 
-	item = new MenuItem(_("Random"), RANDOM);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Random")), RANDOM);
 	menuLevels->add(item);
 
 	menuLevels->addBlank();
@@ -414,10 +396,6 @@ void GameStateMainMenu::createLevelsMenu()
 }
 void GameStateMainMenu::createGameSettingsMenu()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	SAFE_DELETE(this->menuGameSettings);
 
 	this->menuGameSettings = new Menu(1,
@@ -427,25 +405,25 @@ void GameStateMainMenu::createGameSettingsMenu()
 
 	MenuItem* item;
 
-	item = new MenuItem(_("Back"), GO_BACK);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Back")), GO_BACK);
 	menuGameSettings->add(item);
 
 	menuGameSettings->addBlank();
 
 	MenuItemNumberbox* number;
 
-	number = new MenuItemNumberbox(_("Starting Speed"), STARTING_SPEED, 1, 10, Globals::Game::starting_speed);
+	number = new MenuItemNumberbox(Globals::Game::translationIsTooLong(_("Starting Speed"), 20), STARTING_SPEED, 1, 10, Globals::Game::starting_speed);
 	menuGameSettings->add(number);
 
-	number = new MenuItemNumberbox(_("Fruits"), FRUITS, 1, 99, Globals::Game::fruits_at_once);
+	number = new MenuItemNumberbox(Globals::Game::translationIsTooLong(_("Fruits"), 20), FRUITS, 1, 99, Globals::Game::fruits_at_once);
 	menuGameSettings->add(number);
 
 	MenuItemCheckbox* check;
 
-	check = new MenuItemCheckbox(_("Teleport"), TELEPORT, Globals::Game::teleport);
+	check = new MenuItemCheckbox(Globals::Game::translationIsTooLong(_("Teleport"), 20), TELEPORT, Globals::Game::teleport);
 	menuGameSettings->add(check);
 
-	check = new MenuItemCheckbox(_("Random Walls"), RANDOM_WALLS, Globals::Game::random_walls);
+	check = new MenuItemCheckbox(Globals::Game::translationIsTooLong(_("Random Walls"), 20), RANDOM_WALLS, Globals::Game::random_walls);
 	menuGameSettings->add(check);
 
 	// The board size
@@ -466,7 +444,7 @@ void GameStateMainMenu::createGameSettingsMenu()
 	default:                    defaullt = _("Large");  break;
 	}
 
-	list = new MenuItemTextlist(_("Maze size"),
+	list = new MenuItemTextlist(Globals::Game::translationIsTooLong(_("Maze size"), 15),
 	                            BOARD_SIZE,
 	                            options,
 	                            defaullt);
@@ -475,19 +453,19 @@ void GameStateMainMenu::createGameSettingsMenu()
 
 	menuGameSettings->addBlank();
 
-	number = new MenuItemNumberbox(_("Scroll Delay(ms)"), SCROLL_DELAY, 100, 5000, Globals::Game::board_scroll_delay, 100);
+	number = new MenuItemNumberbox(Globals::Game::translationIsTooLong(_("Scroll Delay(ms)"), 20), SCROLL_DELAY, 100, 5000, Globals::Game::board_scroll_delay, 100);
 	menuGameSettings->add(number);
 
-	check = new MenuItemCheckbox(_("Scroll Up"), SCROLL_UP, Globals::Game::board_scroll_up);
+	check = new MenuItemCheckbox(Globals::Game::translationIsTooLong(_("Scroll Up"), 20), SCROLL_UP, Globals::Game::board_scroll_up);
 	menuGameSettings->add(check);
 
-	check = new MenuItemCheckbox(_("Scroll Down"), SCROLL_DOWN, Globals::Game::board_scroll_down);
+	check = new MenuItemCheckbox(Globals::Game::translationIsTooLong(_("Scroll Down"), 20), SCROLL_DOWN, Globals::Game::board_scroll_down);
 	menuGameSettings->add(check);
 
-	check = new MenuItemCheckbox(_("Scroll Left"), SCROLL_LEFT, Globals::Game::board_scroll_left);
+	check = new MenuItemCheckbox(Globals::Game::translationIsTooLong(_("Scroll Left"), 20), SCROLL_LEFT, Globals::Game::board_scroll_left);
 	menuGameSettings->add(check);
 
-	check = new MenuItemCheckbox(_("Scroll Right"), SCROLL_RIGHT, Globals::Game::board_scroll_right);
+	check = new MenuItemCheckbox(Globals::Game::translationIsTooLong(_("Scroll Right"), 20), SCROLL_RIGHT, Globals::Game::board_scroll_right);
 	menuGameSettings->add(check);
 
 	menuGameSettings->addBlank();
@@ -498,10 +476,6 @@ void GameStateMainMenu::createGameSettingsMenu()
 }
 void GameStateMainMenu::createGUIOptionsMenu()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	SAFE_DELETE(this->menuGUIOptions);
 
 	this->menuGUIOptions = new Menu(1,
@@ -518,37 +492,33 @@ void GameStateMainMenu::createGUIOptionsMenu()
 
 	MenuItemCheckbox* check;
 
-	check = new MenuItemCheckbox(_("Show Borders"),
+	check = new MenuItemCheckbox(Globals::Game::translationIsTooLong(_("Show Borders"), 20),
 	                             SHOW_BORDERS,
 	                             EngineGlobals::Screen::show_borders);
 	menuGUIOptions->add(check);
 
-	check = new MenuItemCheckbox(_("Fancy Borders"),
+	check = new MenuItemCheckbox(Globals::Game::translationIsTooLong(_("Fancy Borders"), 20),
 	                             FANCY_BORDERS,
 	                             EngineGlobals::Screen::fancy_borders);
 	menuGUIOptions->add(check);
 
-	check = new MenuItemCheckbox(_("Outer Border"),
+	check = new MenuItemCheckbox(Globals::Game::translationIsTooLong(_("Outer Border"), 20),
 	                             OUTER_BORDER,
 	                             EngineGlobals::Screen::outer_border);
 	menuGUIOptions->add(check);
 
-	check = new MenuItemCheckbox(_("Center Horizontal"),
+	check = new MenuItemCheckbox(Globals::Game::translationIsTooLong(_("Center Horizontal"), 20),
 	                             CENTER_HORIZONTAL,
 	                             EngineGlobals::Screen::center_horizontally);
 	menuGUIOptions->add(check);
 
-	check = new MenuItemCheckbox(_("Center Vertical"),
+	check = new MenuItemCheckbox(Globals::Game::translationIsTooLong(_("Center Vertical"), 20),
 	                             CENTER_VERTICAL,
 	                             EngineGlobals::Screen::center_vertically);
 	menuGUIOptions->add(check);
 }
 void GameStateMainMenu::createControlsMenu()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	SAFE_DELETE(this->menuControls);
 
 	this->menuControls = new Menu(1,
@@ -596,7 +566,7 @@ void GameStateMainMenu::createControlsMenu()
 
 	menuControls->addBlank();
 
-	item = new MenuItem(_("Reset to Defaults"), CONTROLS_DEFAULT);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Reset to Defaults"), 20), CONTROLS_DEFAULT);
 	menuControls->add(item);
 }
 void GameStateMainMenu::saveSettingsMenuGUIOptions()

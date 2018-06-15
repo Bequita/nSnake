@@ -8,14 +8,9 @@
 #include <Display/Animations/AnimationFire.hpp>
 #include <Display/Animations/AnimationWater.hpp>
 #include <Display/Animations/AnimationGameOfLife.hpp>
+#include <Config/Globals.hpp>
 
 #include <iostream>
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <libintl.h>
-#include <locale.h>
-#define _(STRING) gettext(STRING)
 
 LayoutMainMenu::LayoutMainMenu(int width, int height, GameStateMainMenu* state):
 	Layout(width, height),
@@ -33,10 +28,6 @@ LayoutMainMenu::~LayoutMainMenu()
 }
 void LayoutMainMenu::windowsInit()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	Layout::windowsInit();
 
 	// LOGO

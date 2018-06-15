@@ -1,14 +1,9 @@
 #include <Engine/Graphics/Window.hpp>
 #include <Engine/EngineGlobals.hpp>
+#include <Config/Globals.hpp>
 
 #include <sstream>				// stringstream
 #include <iostream>
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <libintl.h>
-#include <locale.h>
-#define _(STRING) gettext(STRING)
 
 Window::Window(int x, int y, int w, int h):
 	win(NULL),
@@ -41,10 +36,6 @@ Window::Window(Window* parent, int x, int y, int width, int height):
 	bottomLeftTitle(""),
 	bottomRightTitle("")
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	// By sending any parameter as 0, we want it to expand
 	// until possible.
 	// Let's expand based if the parent window has borders

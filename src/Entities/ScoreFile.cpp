@@ -8,12 +8,6 @@
 #include <stdlib.h>	  // getenv()
 #include <fstream>    // ofstream
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <libintl.h>
-#include <locale.h>
-#define _(STRING) gettext(STRING)
-
 // HACK This will be initialized at `Globals::init()`
 std::string ScoreFile::directory = "";
 
@@ -103,10 +97,6 @@ ScoreFile::ScoreFile(std::string levelName):
 
 void ScoreFile::load()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	// Make it point nowhere, since we're refreshing
 	// the score entries.
 	this->highScore = NULL;
@@ -149,7 +139,7 @@ void ScoreFile::load()
 		// Compare versions, lower, higher, whatever...
 		Globals::Error::old_version_score_file = true;
 
-		throw ScoreFileException(_("File '") + score_file + _("' has an old version format"));
+		throw ScoreFileException(_("File '") + score_file + ("' has an old version format"));
 	}
 
 	// Going through each group on the INI file
@@ -213,10 +203,6 @@ void ScoreFile::load()
 }
 void ScoreFile::save()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	// Score files are dependent of the level name.
 	std::string score_file = (ScoreFile::directory +
 	                          this->level_name +

@@ -2,15 +2,10 @@
 #include <Engine/Graphics/Ncurses.hpp>
 #include <Engine/EngineGlobals.hpp>
 #include <Engine/Helpers/Utils.hpp>
+#include <Config/Globals.hpp>
 
 #include <iostream>
 #include <cstdlib>
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <libintl.h>
-#include <locale.h>
-#define _(STRING) gettext(STRING)
 
 int Layout::screenWidth  = 0;
 int Layout::screenHeight = 0;
@@ -28,10 +23,6 @@ Layout::~Layout()
 { }
 void Layout::windowsInit()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	clear();
 
 	// Gets the current width and height of the whole terminal.

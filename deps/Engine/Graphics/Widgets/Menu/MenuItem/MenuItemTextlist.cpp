@@ -2,24 +2,15 @@
 #include <Engine/Helpers/Utils.hpp>
 #include <Engine/EngineGlobals.hpp>
 #include <Engine/InputManager.hpp>
+#include <Config/Globals.hpp>
 
 #include <stdexcept>
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <libintl.h>
-#include <locale.h>
-#define _(STRING) gettext(STRING)
 
 MenuItemTextlist::MenuItemTextlist(std::string label, int id, std::vector<std::string> options, std::string initial):
 	MenuItem(label, id),
 	options(options),
 	currentIndex(-1)
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	this->type = MenuItem::TEXTLIST;
 
 	for (unsigned int i = 0; i < options.size(); ++i)

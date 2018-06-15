@@ -9,12 +9,6 @@
 #include <Engine/Flow/StateManager.hpp>
 #include <States/GameStateMainMenu.hpp>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <libintl.h>
-#include <locale.h>
-#define _(STRING) gettext(STRING)
-
 GameStateGame::GameStateGame():
 	game(NULL),
 	willQuit(false)
@@ -23,10 +17,6 @@ GameStateGame::~GameStateGame()
 { }
 void GameStateGame::load()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	try {
 		this->game = new Game();
 		this->game->start(Globals::Game::current_level);
@@ -55,10 +45,6 @@ void GameStateGame::unload()
 }
 void GameStateGame::update()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	if (this->willQuit)
 		StateManager::quit();
 
@@ -76,7 +62,7 @@ void GameStateGame::update()
 
 		this->game->draw();
 
-		if (Dialog::askBool(_("Retry?"), _("Game Over"), true))
+		if (Dialog::askBool(Globals::Game::translationIsTooLong(_("Retry?"), 15), Globals::Game::translationIsTooLong(_("Game Over"), 15), true))
 			this->load(); // restart the game
 		else
 			StateManager::change(new GameStateMainMenu());

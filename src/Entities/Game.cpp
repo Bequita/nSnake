@@ -7,12 +7,6 @@
 
 #include <stdlib.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <libintl.h>
-#include <locale.h>
-#define _(STRING) gettext(STRING)
-
 // Options of the Pause Menu
 enum NamesToEasilyIdentifyTheMenuItemsInsteadOfRawNumbers
 {
@@ -44,10 +38,6 @@ Game::~Game()
 }
 void Game::start(std::string levelName)
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	// Cleaning things from the previous game (if any)
 	SAFE_DELETE(this->layout);
 	SAFE_DELETE(this->scores);
@@ -134,18 +124,19 @@ void Game::start(std::string levelName)
 
 	MenuItem* item;
 
-	item = new MenuItem(_("Resume"), RESUME);
+
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Resume")), RESUME);
 	this->pauseMenu->add(item);
 
-	item = new MenuItem(_("Restart"), RESTART);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Restart")), RESTART);
 	this->pauseMenu->add(item);
 
 	this->pauseMenu->addBlank();
 
-	item = new MenuItem(_("Quit to Main Menu"), QUIT_MENU);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Quit to Main Menu")), QUIT_MENU);
 	this->pauseMenu->add(item);
 
-	item = new MenuItem(_("Quit Game"), QUIT_GAME);
+	item = new MenuItem(Globals::Game::translationIsTooLong(_("Quit Game")), QUIT_GAME);
 	this->pauseMenu->add(item);
 
 	// Starting timers

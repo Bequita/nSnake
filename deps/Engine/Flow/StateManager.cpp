@@ -1,12 +1,7 @@
 #include <Engine/Flow/StateManager.hpp>
 #include <Engine/InputManager.hpp>
 #include <Engine/Helpers/Utils.hpp>
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <libintl.h>
-#include <locale.h>
-#define _(STRING) gettext(STRING)
+#include <Config/Globals.hpp>
 
 void StateManager::change(GameState* newState)
 {
@@ -42,10 +37,6 @@ StateManager::~StateManager()
 }
 void StateManager::run(GameState* initialState)
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	if (! initialState)
 		throw _("No initial state given to StateManager");
 

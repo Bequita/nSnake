@@ -11,6 +11,15 @@
 #include <iostream>
 #include <fstream>
 
+#include <stdlib.h>
+#include <string.h>
+#include <string>
+#include <stdio.h>
+#include <stdlib.h>
+#include <libintl.h>
+#include <locale.h>
+#define _(STRING) gettext(STRING)
+
 // VERSION is formatted like "0.0.1" - i'm skipping the dots
 char Globals::version[3] = { VERSION[0],
                              VERSION[2],
@@ -137,6 +146,10 @@ void Globals::init()
 	/// Making sure they both exist...!
 	if (! Utils::File::isDirectory(BoardParser::directory))
 		Utils::File::mkdir_p(BoardParser::directory);
+
+	setlocale (LC_ALL, "");
+  	bindtextdomain ("nsnake", "/usr/share/locale/");
+  	textdomain ("nsnake");
 }
 void Globals::loadFile()
 {
@@ -399,4 +412,9 @@ void Globals::warnErrors()
 		          << std::endl;
 	}
 }
-
+std::string Globals::Game::translationIsTooLong(char* translationCharArray, int skippedCharacters) 
+{
+	std::string translation = std::string(translationCharArray);
+	int translationLength = translation.length();
+	return translationLength > skippedCharacters ? (translation.substr(0,10) + "...") : translation;
+}

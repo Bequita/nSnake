@@ -5,15 +5,10 @@
 #include <Engine/EngineGlobals.hpp>
 #include <Engine/InputManager.hpp>
 #include <Engine/Helpers/Utils.hpp>
+#include <Config/Globals.hpp>
 
 #include <vector>
 #include <algorithm>
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <libintl.h>
-#include <locale.h>
-#define _(STRING) gettext(STRING)
 
 void Dialog::show(std::string message, bool pressAnyKey)
 {
@@ -56,10 +51,6 @@ void Dialog::show(std::string message, bool pressAnyKey)
 
 bool Dialog::askBool(std::string question, std::string title, bool default_value)
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	int windowx = Layout::screenWidth/2 - (question.size() + 12)/2;
 	int windowy = Layout::screenHeight/2 - 5/2;
 

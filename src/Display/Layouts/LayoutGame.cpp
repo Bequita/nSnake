@@ -2,12 +2,6 @@
 #include <Engine/EngineGlobals.hpp>
 #include <Engine/Helpers/Utils.hpp>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <libintl.h>
-#include <locale.h>
-#define _(STRING) gettext(STRING)
-
 LayoutGame::LayoutGame(Game* game, int width, int height):
 	Layout(width, height),
 	game(game),
@@ -26,10 +20,6 @@ LayoutGame::~LayoutGame()
 }
 void LayoutGame::windowsInit()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	Layout::windowsInit();
 	this->main->setTitle("nsnake " VERSION);
 
@@ -87,10 +77,6 @@ void LayoutGame::windowsExit()
 }
 void LayoutGame::draw(Menu* menu)
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	if (! this->game)
 		return;
 

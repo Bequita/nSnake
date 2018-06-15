@@ -4,12 +4,8 @@
 #include <Engine/EngineGlobals.hpp>
 #include <Engine/InputManager.hpp>
 #include <Engine/Helpers/Utils.hpp>
+#include <Config/Globals.hpp>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <libintl.h>
-#include <locale.h>
-#define _(STRING) gettext(STRING)
 
 WindowGameHelp::WindowGameHelp()
 {
@@ -35,10 +31,6 @@ WindowGameHelp::WindowGameHelp()
 }
 void WindowGameHelp::run()
 {
-	setlocale (LC_ALL, "");
-  	bindtextdomain ("nsnake", "/usr/share/locale/");
-  	textdomain ("nsnake");
-
 	int activatedIndex = 0;
 
 	while (true)
